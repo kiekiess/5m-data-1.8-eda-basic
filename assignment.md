@@ -22,7 +22,10 @@ threshold = 30
 Answer:
 
 ```python
+# Select rows where any value exceeds the threshold
+filtered_df = df[df.gt(threshold).any(axis=1)]
 
+print(filtered_df)
 ```
 
 ### Question 2
@@ -38,6 +41,10 @@ df = pd.DataFrame({'A': [2, 1, 2], 'B': [2, 3, 1], 'C': [1, 2, 3]})
 Answer:
 
 ```python
+# Sort by columns A and B in ascending order
+sorted_df = df.sort_values(by=['A', 'B'])
+
+print(sorted_df)
 
 ```
 
@@ -55,7 +62,10 @@ df2 = pd.DataFrame({'A': [7, 8, 9], 'B': [10, 11, 12]})
 Answer:
 
 ```python
+# Concatenate vertically
+result = pd.concat([df1, df2], axis=0, ignore_index=True)
 
+print(result)
 ```
 
 ### Question 4
@@ -71,6 +81,10 @@ df = pd.DataFrame({'A': [1, 2, 3, 4, 5]})
 Answer:
 
 ```python
+# Compute cumulative sum of column A
+df['A_cumsum'] = df['A'].cumsum()
+
+print(df)
 
 ```
 
@@ -87,6 +101,10 @@ series = pd.Series(['apple', 'banana', 'cherry'])
 Answer:
 
 ```python
+# Convert to uppercase
+uppercase_series = series.str.upper()
+
+print(uppercase_series)
 
 ```
 
